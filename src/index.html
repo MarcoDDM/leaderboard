@@ -10,26 +10,50 @@
 <body>
     <div class="container">
         <div class="leaderboard">
-            <h2>Leaderboard</h2>
-            <ol>
-                <li>Player 1 - Score: 100</li>
-                <li>Player 2 - Score: 95</li>
-                <li>Player 3 - Score: 80</li>
-                <li>Player 4 - Score: 75</li>
-                <li>Player 5 - Score: 50</li>
-            </ol>
+            <h1>Leaderboard</h1>
+            <h2>Recent Scores </h2><button class="refresh-btn">Refresh</button>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="even-row">
+                        <td>Player 1</td>
+                        <td>100</td>
+                    </tr>
+                    <tr class="odd-row">
+                        <td>Player 2</td>
+                        <td>95</td>
+                    </tr>
+                    <tr class="even-row">
+                        <td>Player 3</td>
+                        <td>80</td>
+                    </tr>
+                    <tr class="odd-row">
+                        <td>Player 4</td>
+                        <td>75</td>
+                    </tr>
+                    <tr class="even-row">
+                        <td>Player 5</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="form-container">
-            <h2>Add Player</h2>
+            <h2>Add Your Score</h2>
             <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="score">Score:</label>
-                <input type="number" id="score" name="score"><br><br>
+                <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+                <input type="number" id="score" name="score" placeholder="Your score"><br><br>
                 <button type="submit">Submit</button>
             </form>
         </div>
     </div>
+
 
 </body>
 
