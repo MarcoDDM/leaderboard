@@ -1,3 +1,118 @@
-body {
-    background-color: bisque;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20%;
+}
+
+.leaderboard .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.leaderboard h1 {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.leaderboard table {
+  border-collapse: collapse;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.leaderboard caption {
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.leaderboard th,
+.leaderboard td {
+  padding: 10px;
+  text-align: center;
+}
+
+.leaderboard th {
+  background-color: #008cba;
+  color: white;
+}
+
+.leaderboard tr.even-row {
+  background-color: #f9f9f9;
+}
+
+.leaderboard tr.odd-row {
+  background-color: #e5e5e5;
+}
+
+.leaderboard .refresh-btn {
+  padding: 10px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.leaderboard .refresh-btn:hover {
+  background-color: #00688b;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container label {
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"] {
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid;
+}
+
+.form-container input[type="submit"] {
+  padding: 10px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #00688b;
 }
