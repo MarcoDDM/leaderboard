@@ -1,6 +1,6 @@
 const API_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nslYEPpt500fFqeTXs8e';
 
-async function submitScore(name, score) {
+const submitScore = async (name, score) => {
   const response = await fetch(`${API_URL}/scores`, {
     method: 'POST',
     headers: {
@@ -13,13 +13,13 @@ async function submitScore(name, score) {
   });
   const result = await response.json();
   return result;
-}
+};
 
-async function getScores() {
+const getScores = async () => {
   const response = await fetch(`${API_URL}/scores`);
   const result = await response.json();
   return result;
-}
+};
 
 const scoreForm = document.getElementById('score-form');
 scoreForm.addEventListener('submit', async (event) => {
@@ -33,7 +33,7 @@ scoreForm.addEventListener('submit', async (event) => {
   scoreInput.value = '';
 });
 
-function createScoreRow(score) {
+const createScoreRow = (score) => {
   const row = document.createElement('tr');
   const nameCell = document.createElement('td');
   nameCell.textContent = score.user;
@@ -42,16 +42,16 @@ function createScoreRow(score) {
   scoreCell.textContent = score.score;
   row.appendChild(scoreCell);
   return row;
-}
+};
 
-function displayScores(scores) {
+const displayScores = (scores) => {
   const scoreTable = document.getElementById('score-table');
   scoreTable.innerHTML = '';
   scores.forEach((score) => {
     const row = createScoreRow(score);
     scoreTable.appendChild(row);
   });
-}
+};
 
 const refreshBtn = document.querySelector('.refresh-btn');
 refreshBtn.addEventListener('click', async () => {
