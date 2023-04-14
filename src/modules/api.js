@@ -1,6 +1,5 @@
 const API_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nslYEPpt500fFqeTXs8e';
 
-// Function to submit score
 async function submitScore(name, score) {
   const response = await fetch(API_URL + '/scores', {
     method: 'POST',
@@ -16,14 +15,12 @@ async function submitScore(name, score) {
   return result;
 }
 
-// Function to get scores
 async function getScores() {
   const response = await fetch(API_URL + '/scores');
   const result = await response.json();
   return result;
 }
 
-// Bind form submit event to submitScore function
 const scoreForm = document.getElementById('score-form');
 scoreForm.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -37,7 +34,6 @@ scoreForm.addEventListener('submit', async (event) => {
   scoreInput.value = '';
 });
 
-// Function to create a table row for a score
 function createScoreRow(score) {
   const row = document.createElement('tr');
   const nameCell = document.createElement('td');
@@ -49,7 +45,6 @@ function createScoreRow(score) {
   return row;
 }
 
-// Function to display scores in table
 function displayScores(scores) {
   const scoreTable = document.getElementById('score-table');
   scoreTable.innerHTML = '';
@@ -59,7 +54,6 @@ function displayScores(scores) {
   });
 }
 
-// Bind refresh button click event to getScores function
 const refreshBtn = document.querySelector('.refresh-btn');
 refreshBtn.addEventListener('click', async () => {
   const result = await getScores();
