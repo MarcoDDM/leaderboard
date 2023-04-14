@@ -1,22 +1,22 @@
 const API_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nslYEPpt500fFqeTXs8e';
 
 async function submitScore(name, score) {
-  const response = await fetch(API_URL + '/scores', {
+  const response = await fetch(`${API_URL}/scores`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       user: name,
-      score: score
-    })
+      score,
+    }),
   });
   const result = await response.json();
   return result;
 }
 
 async function getScores() {
-  const response = await fetch(API_URL + '/scores');
+  const response = await fetch(`${API_URL}/scores`);
   const result = await response.json();
   return result;
 }
@@ -28,8 +28,7 @@ scoreForm.addEventListener('submit', async (event) => {
   const scoreInput = document.getElementById('score');
   const name = nameInput.value;
   const score = scoreInput.value;
-  const result = await submitScore(name, score);
-  console.log(result);
+  await submitScore(name, score);
   nameInput.value = '';
   scoreInput.value = '';
 });
@@ -48,7 +47,7 @@ function createScoreRow(score) {
 function displayScores(scores) {
   const scoreTable = document.getElementById('score-table');
   scoreTable.innerHTML = '';
-  scores.forEach(score => {
+  scores.forEach((score) => {
     const row = createScoreRow(score);
     scoreTable.appendChild(row);
   });
@@ -60,4 +59,3 @@ refreshBtn.addEventListener('click', async () => {
   const scores = result.result.sort((a, b) => b.score - a.score);
   displayScores(scores);
 });
-
